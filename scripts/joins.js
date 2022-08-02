@@ -22,10 +22,10 @@ function getAllOwnersAndDogs() {
     return db.owners.aggregate([
         {
             $lookup: {
-                from: "???",
-                localField: "???",
-                foreignField: "???",
-                as: "???",
+                from: "dogs",
+                localField: "name",
+                foreignField: "ownerName",
+                as: "pets",
             },
         },
     ]);
